@@ -17,6 +17,7 @@ return {
 					"emmet-language-server",      -- emmet_language_server
 					"sqlls",                      -- SQL LSP
 					"astro-language-server",      -- astro
+					"tailwindcss-language-server", -- Tailwind CSS
 
 					-- Formatters
 					"biome",        -- JS/TS/JSON
@@ -25,6 +26,7 @@ return {
 					"isort",        -- Python imports
 					"stylua",       -- Lua
 					"sql-formatter", -- SQL
+					"djlint",       -- Django/Jinja templates
 
 					-- Linters
 					"eslint_d",  -- JS/TS
