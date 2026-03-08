@@ -26,24 +26,8 @@ return {
       }
     })
 
-    -- Terminal específico para tmux
-    local Terminal = require('toggleterm.terminal').Terminal
-    local tmux = Terminal:new({
-      cmd = "tmux new-session -A -s neovim",
-      hidden = true,
-      direction = "float",
-      float_opts = {
-        border = "double",
-      },
-    })
-
-    function _TMUX_TOGGLE()
-      tmux:toggle()
-    end
-
     -- Keymaps
     vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "Toggle floating terminal" })
-    vim.keymap.set("n", "<leader>tx", "<cmd>lua _TMUX_TOGGLE()<CR>", { desc = "Toggle tmux session" })
     vim.keymap.set("n", "<leader>tq", "<cmd>ToggleTerm<cr>", { desc = "Close terminal" })
 
     -- Terminal mode shortcuts

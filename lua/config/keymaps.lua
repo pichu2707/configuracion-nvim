@@ -1,9 +1,30 @@
 vim.keymap.set("n", "gb", ":bn<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "gB", ":bp<CR>", { noremap = true, silent = true })
--- Tmux navigation handled by tmux.nvim plugin
 -- Terminal manejado por toggleterm.nvim plugin
 vim.keymap.set("n", "<leader>ac", "<cmd>ClaudeCode<cr>", { desc = "Toggle Claude" })
 vim.keymap.set("v", "<leader>as", "<cmd>ClaudeCodeSend<cr>", { desc = "Send to Claude" })
+
+-- Avante (Ollama AI)
+vim.keymap.set("n", "<leader>aa", "<cmd>AvanteAsk<cr>", { desc = "Avante: Ask AI" })
+vim.keymap.set("v", "<leader>aa", "<cmd>AvanteAsk<cr>", { desc = "Avante: Ask about selection" })
+vim.keymap.set("n", "<leader>at", "<cmd>AvanteToggle<cr>", { desc = "Avante: Toggle sidebar" })
+vim.keymap.set("v", "<leader>ae", "<cmd>AvanteEdit<cr>", { desc = "Avante: Edit selection" })
+vim.keymap.set("n", "<leader>ar", "<cmd>AvanteRefresh<cr>", { desc = "Avante: Refresh" })
+vim.keymap.set("n", "<leader>af", "<cmd>AvanteFocus<cr>", { desc = "Avante: Focus sidebar" })
+
+-- Mover líneas de arriba/abajo (Modo Normal)
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true, desc = "Bajar una línea el código" })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true, desc = "Subir una línea el código" })
+
+-- Mover un bloque seleccionado (Modo Visual)
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Bajar bloque seleccionado" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Subir bloque seleccionado" })
+
+-- Clipboard system integration
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { desc = "Paste before from system clipboard" })
 
 -- Split windows
 vim.keymap.set("n", "<leader>wv", ":vsplit<CR>", { noremap = true, silent = true, desc = "Split vertical" })
