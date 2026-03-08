@@ -1,7 +1,17 @@
 return {
 	{
 		"mason-org/mason.nvim",
-		opts = {},
+		opts = {
+			PATH = "prepend", -- Prepend Mason's bin to PATH
+			pip = {
+				upgrade_pip = true,
+			},
+		},
+		config = function(_, opts)
+			-- Force Mason to use system Python instead of uv's Python
+			vim.env.PATH = "/usr/bin:" .. vim.env.PATH
+			require("mason").setup(opts)
+		end,
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",

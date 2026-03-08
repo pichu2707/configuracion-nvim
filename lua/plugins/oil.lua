@@ -3,13 +3,18 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     require("oil").setup({
-      default_file_explorer = false,  -- No reemplazar netrw por defecto
+      default_file_explorer = true,  -- Reemplazar netrw por defecto
       columns = {
         "icon",
+        "permissions",
+        "size",
       },
       view_options = {
         show_hidden = true,
       },
+      -- Confirmar operaciones destructivas
+      delete_to_trash = true,
+      skip_confirm_for_simple_edits = false,
       keymaps = {
         ["g?"] = "actions.show_help",
         ["<CR>"] = "actions.select",
@@ -26,11 +31,21 @@ return {
         ["gs"] = "actions.change_sort",
         ["gx"] = "actions.open_external",
         ["g."] = "actions.toggle_hidden",
+        ["g\\"] = "actions.toggle_trash",
       },
     })
 
-    -- Keymaps
+    -- Keymaps globales
     vim.keymap.set("n", "<leader>o", "<cmd>Oil<cr>", { desc = "Open Oil file explorer" })
     vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
+
+    -- Info útil para el usuario
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "oil",
+      callback = function()
+        vim.notify("Oil.nvim: '-' para editar nombres | 'D' para borrar | '<CR>' para guardar cambios", vim.log.levels.INFO, { title = "Oil" })
+      end,
+      once = true,
+    })
   end,
 }

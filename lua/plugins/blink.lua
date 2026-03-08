@@ -34,13 +34,51 @@ return {
 			nerd_font_variant = 'mono'
 		},
 
-		-- (Default) Only show the documentation popup when manually triggered
-		completion = { documentation = { auto_show = true } },
+		-- Documentación automática y firma de funciones
+		completion = {
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 200,
+			},
+			menu = {
+				draw = {
+					columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+				},
+			},
+		},
+
+		-- Mostrar firma de funciones (muy útil para React/TypeScript)
+		signature = {
+			enabled = true,
+		},
 
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			default = { 'lsp', 'path', 'snippets', 'buffer' },
+			-- Prioridad de fuentes (LSP primero para React/TypeScript)
+			providers = {
+				lsp = {
+					name = 'LSP',
+					module = 'blink.cmp.sources.lsp',
+					score_offset = 100, -- Mayor prioridad para LSP
+				},
+				snippets = {
+					name = 'Snippets',
+					module = 'blink.cmp.sources.snippets',
+					score_offset = 80,
+				},
+				path = {
+					name = 'Path',
+					module = 'blink.cmp.sources.path',
+					score_offset = 50,
+				},
+				buffer = {
+					name = 'Buffer',
+					module = 'blink.cmp.sources.buffer',
+					score_offset = 40,
+				},
+			},
 		},
 
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
