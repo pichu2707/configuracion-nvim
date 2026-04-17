@@ -1,5 +1,6 @@
 return {
 	"folke/snacks.nvim",
+	-- commit = "bc0630e", -- Descomenta esta línea si usas Neovim < 0.10
 	priority = 1000,
 	lazy = false,
 	---@type snacks.Config

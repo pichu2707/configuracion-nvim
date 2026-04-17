@@ -19,7 +19,7 @@ return{
       -- Configuración de display
       display = {
         "VirtualText",               -- display results as virtual text inline
-        -- "TempFloatingWindow",     -- deshabilitado para que errores sean menos molestos
+        "TempFloatingWindow",     -- deshabilitado para que errores sean menos molestos
       },
 
       live_display = { "VirtualText" }, -- display mode used in live_mode

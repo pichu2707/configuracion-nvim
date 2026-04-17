@@ -58,6 +58,17 @@ local function run_current_file()
 		vim.cmd("!lua " .. file)
 	elseif ft == "sh" or ft == "bash" then
 		vim.cmd("!bash " .. file)
+	elseif ft == "java" then
+		local filename = vim.fn.expand("%:t:r") -- nombre sin extensión
+		vim.cmd("!javac " .. file .. " && java " .. filename)
+	elseif ft == "rust" then
+		-- Si existe Cargo.toml, usar cargo run; si no, compilar directamente
+		if vim.fn.filereadable("Cargo.toml") == 1 then
+			vim.cmd("!cargo run")
+		else
+			local output = vim.fn.expand("%:r")
+			vim.cmd("!rustc " .. file .. " -o " .. output .. " && ./" .. output)
+		end
 	else
 		print("No run command configured for filetype: " .. ft)
 	end
@@ -81,6 +92,18 @@ local function run_in_toggleterm()
 		cmd = 'lua "' .. file .. '"'
 	elseif ft == "sh" or ft == "bash" then
 		cmd = 'bash "' .. file .. '"'
+	elseif ft == "java" then
+		local dir = vim.fn.expand("%:p:h")
+		local filename = vim.fn.expand("%:t:r")
+		cmd = 'cd "' .. dir .. '" && javac "' .. vim.fn.expand("%:t") .. '" && java ' .. filename
+	elseif ft == "rust" then
+		local dir = vim.fn.expand("%:p:h")
+		if vim.fn.filereadable("Cargo.toml") == 1 then
+			cmd = "cargo run"
+		else
+			local output = vim.fn.expand("%:t:r")
+			cmd = 'cd "' .. dir .. '" && rustc "' .. vim.fn.expand("%:t") .. '" -o ' .. output .. " && ./" .. output
+		end
 	else
 		print("No run command configured for filetype: " .. ft)
 		return

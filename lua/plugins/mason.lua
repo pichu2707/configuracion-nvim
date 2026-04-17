@@ -21,28 +21,30 @@ return {
 				ensure_installed = {
 					-- LSP Servers
 					"typescript-language-server", -- ts_ls
-					"python-lsp-server",          -- pylsp
-					"html-lsp",                   -- html
-					"css-lsp",                    -- cssls
-					"emmet-language-server",      -- emmet_language_server
-					"sqlls",                      -- SQL LSP
-					"astro-language-server",      -- astro
+					"python-lsp-server", -- pylsp
+					"stylua",
+					"html-lsp", -- html
+					"css-lsp", -- cssls
+					"emmet-language-server", -- emmet_language_server
+					"sqlls", -- SQL LSP
+					"astro-language-server", -- astro
 					"tailwindcss-language-server", -- Tailwind CSS
 
 					-- Formatters
-					"biome",        -- JS/TS/JSON
-					"prettier",     -- JS/TS/HTML/CSS/JSON/etc
-					"black",        -- Python
-					"isort",        -- Python imports
-					"stylua",       -- Lua
+					"biome", -- JS/TS/JSON
+					"prettier", -- JS/TS/HTML/CSS/JSON/etc
+					"black", -- Python
+					"isort", -- Python imports
+					"pyright",
+					"stylua", -- Lua
 					"sql-formatter", -- SQL
-					"djlint",       -- Django/Jinja templates
+					"djlint", -- Django/Jinja templates
 
 					-- Linters
-					"eslint_d",  -- JS/TS
-					"pylint",    -- Python
-					"jsonlint",  -- JSON
-					"sqlfluff",  -- SQL
+					"eslint_d", -- JS/TS
+					"pylint", -- Python
+					"jsonlint", -- JSON
+					"sqlfluff", -- SQL
 				},
 				auto_update = false,
 				run_on_start = true,

@@ -3,12 +3,22 @@ return {
 	build = "npm install -g live-server",
 	cmd = { "LiveServerStart", "LiveServerStop" },
 	keys = {
-		{ "<leader>Ls", "<cmd>LiveServerStart<CR>", desc = "Start live server" },
+		{
+			"<leader>Ls",
+			function()
+				vim.cmd("LiveServerStart")
+				-- Espera un momento y abre el navegador en Windows/WSL
+				vim.defer_fn(function()
+					vim.fn.jobstart({ "explorer.exe", "http://localhost:5500" }, { detach = true })
+				end, 500)
+			end,
+			desc = "Start live server + open browser",
+		},
 		{ "<leader>Lx", "<cmd>LiveServerStop<CR>", desc = "Stop live server" },
 	},
 	config = function()
 		require("live-server").setup({
-			args = { "--port=8080", "--browser=default" },
+			args = { "--port=5500", "--no-browser" },
 		})
 	end,
 }

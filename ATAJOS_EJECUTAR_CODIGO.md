@@ -1,6 +1,22 @@
-# 🚀 GUÍA RÁPIDA: EJECUTAR CÓDIGO EN NEOVIM
+# GUIA RAPIDA: EJECUTAR CODIGO EN NEOVIM
 
-## 📋 EJECUTAR ARCHIVO COMPLETO
+## HTML / WEB (Live Server)
+
+| Atajo | Acción |
+|-------|--------|
+| `<leader>Ls` | Inicia live-server + abre navegador (puerto 5500) |
+| `<leader>Lx` | Detiene live-server |
+
+**Uso:**
+1. Abre un archivo HTML
+2. Presiona `<leader>Ls`
+3. Se abre el navegador en `http://localhost:5500`
+4. Cambios guardados se recargan automáticamente
+5. `<leader>Lx` para detener cuando termines
+
+---
+
+## EJECUTAR ARCHIVO COMPLETO
 
 ### Método 1: Atajo Inteligente (RECOMENDADO) ⭐
 **Detecta automáticamente el tipo de archivo y lo ejecuta**
