@@ -6,7 +6,38 @@ return {
 	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = true },
-		dashboard = { enabled = true },	
+		dashboard = {
+			enabled = true,
+			preset = {
+				header = [[
+       ██╗ █████╗ ██╗   ██╗██╗██╗      █████╗ ███████╗ █████╗ ██████╗  ██████╗
+       ██║██╔══██╗██║   ██║██║██║     ██╔══██╗╚══███╔╝██╔══██╗██╔══██╗██╔═══██╗
+       ██║███████║██║   ██║██║██║     ███████║  ███╔╝ ███████║██████╔╝██║   ██║
+  ██   ██║██╔══██║╚██╗ ██╔╝██║██║     ██╔══██║ ███╔╝  ██╔══██║██╔══██╗██║   ██║
+  ╚█████╔╝██║  ██║ ╚████╔╝ ██║███████╗██║  ██║███████╗██║  ██║██║  ██║╚██████╔╝
+   ╚════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
+        ]],
+				keys = {
+					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.picker.files()" },
+					{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+					{ icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.picker.grep()" },
+					{ icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.picker.recent()" },
+					{ icon = " ", key = "c", desc = "Config", action = ":lua Snacks.picker.files({cwd = vim.fn.stdpath('config')})" },
+					{ icon = " ", key = "p", desc = "Projects", action = ":lua Snacks.picker.projects()" },
+					{ icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+					{ icon = " ", key = "m", desc = "Mason", action = ":Mason" },
+					{ icon = " ", key = "h", desc = "Harpoon", action = ":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())" },
+					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+				},
+			},
+			sections = {
+				{ section = "header" },
+				{ section = "keys", gap = 1, padding = 1 },
+				{ section = "recent_files", limit = 5, padding = 1, title = "Recent Files", icon = " " },
+				{ section = "projects", limit = 5, padding = 1, title = "Projects", icon = " " },
+				{ section = "startup" },
+			},
+		},
 		explorer = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
@@ -18,15 +49,15 @@ return {
 		words = { enabled = true },
 		rename = { enabled = true },
 		image = {
+			enabled = true,
+			force = true, -- intenta renderizar aunque el terminal le cueste
+			doc = {
 				enabled = true,
-				force = true, --intenta renderizar aunque el terminal le cueste
-				doc = {
-					enabled = true,
-					inline = false, --WezTerm
-					float = true,
-					max_width = 180,
-					max_height = 40,
-				},
+				inline = true, -- Imágenes inline para WezTerm
+				float = true,
+				max_width = 180,
+				max_height = 40,
+			},
 		},
 	},
 	keys = {
@@ -62,5 +93,5 @@ return {
 		{ "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
 		{ "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
 		{ "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
-	}
+	},
 }

@@ -1,3 +1,4 @@
+-- Buffer navigation (legacy - BufferLine also provides <Tab>/<S-Tab>)
 vim.keymap.set("n", "gb", ":bn<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "gB", ":bp<CR>", { noremap = true, silent = true })
 -- Terminal manejado por toggleterm.nvim plugin

@@ -9,7 +9,7 @@ return {
 				light = "macchiato",
 				dark = "mocha",
 			},
-			transparent_background = false, -- disailes setting the background color.
+			transparent_background = true, -- fondo transparente
 			float = {
 				transparent = true, -- enable transparent floating windows
 				solid = false, -- use solid styling for floating windows, see |winborder|
