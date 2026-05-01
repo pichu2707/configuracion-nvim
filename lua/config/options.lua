@@ -20,6 +20,7 @@ do
 end
 
 vim.opt.number = true
+vim.opt.showtabline = 2
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.wrap = true

@@ -1,7 +1,9 @@
 return {
 	"akinsho/bufferline.nvim",
+	enabled = false, -- Usando lualine tabline en su lugar
 	version = "*",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	event = "VeryLazy",
 	config = function()
 		require("bufferline").setup({
 			options = {

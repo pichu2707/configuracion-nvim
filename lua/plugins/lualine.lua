@@ -52,6 +52,27 @@ return {
 				section_separators = { left = "", right = "" },
 				globalstatus = true,
 			},
+			tabline = {
+				lualine_a = {
+					{
+						"buffers",
+						show_filename_only = true,
+						hide_filename_extension = false,
+						show_modified_status = true,
+						mode = 2, -- 0: nombre, 1: índice, 2: nombre + índice
+						symbols = {
+							modified = " ●",
+							alternate_file = "",
+							directory = "",
+						},
+					},
+				},
+				lualine_b = {},
+				lualine_c = {},
+				lualine_x = {},
+				lualine_y = {},
+				lualine_z = { "tabs" },
+			},
 			sections = {
 				lualine_a = { { "mode", icon = "" } },
 				lualine_b = {
