@@ -63,38 +63,38 @@ return {
 			color_overrides = {
 				all = {
 					-- Backgrounds
-					base      = "#191E28", -- gray1 — main background
-					mantle    = "#191E28", -- gray1 — sidebar / statusline bg
-					crust     = "#232A40", -- gray2 — borders
+					base = "#191E28", -- gray1 — main background
+					mantle = "#191E28", -- gray1 — sidebar / statusline bg
+					crust = "#232A40", -- gray2 — borders
 
 					-- Surfaces
-					surface0  = "#1C212C", -- surface0
-					surface1  = "#232A36", -- surface1
-					surface2  = "#2A3142", -- surface2
+					surface0 = "#1C212C", -- surface0
+					surface1 = "#232A36", -- surface1
+					surface2 = "#2A3142", -- surface2
 
 					-- Text
-					text      = "#F3F6F9", -- fg
-					subtext1  = "#8A8FA3", -- bright_black / fg_placeholder
-					subtext0  = "#5C6170", -- gray5 / fg_muted
+					text = "#F3F6F9", -- fg
+					subtext1 = "#00FFFF", -- bright_black / fg_placeholder
+					subtext0 = "#5C6170", -- gray5 / fg_muted
 
 					-- Overlays (selection, inactive text, borders)
-					overlay2  = "#5C6170", -- gray5
-					overlay1  = "#313342", -- gray3
-					overlay0  = "#27345C", -- gray4
+					overlay2 = "#5C6170", -- gray5
+					overlay1 = "#313342", -- gray3
+					overlay0 = "#27345C", -- gray4
 
 					-- Accent colors (syntax)
-					red       = "#CB7C94", -- constant / embedded
-					flamingo  = "#C4746E", -- variable
-					pink      = "#B99BF2", -- function_
-					mauve     = "#C99AD6", -- keyword
-					blue      = "#7FB4CA", -- blue / type
-					sapphire  = "#A3B5D6", -- constructor / primary
-					sky       = "#7AA89F", -- cyan
-					teal      = "#A4DAA7", -- number / enum
-					green     = "#B7CC85", -- green
-					yellow    = "#FFE066", -- yellow / warnings
-					peach     = "#DEBA87", -- operator / orange
-					lavender  = "#263356", -- selection bg
+					red = "#CB7C94", -- constant / embedded
+					flamingo = "#C4746E", -- variable
+					pink = "#B99BF2", -- function_
+					mauve = "#C99AD6", -- keyword
+					blue = "#7FB4CA", -- blue / type
+					sapphire = "#A3B5D6", -- constructor / primary
+					sky = "#7AA89F", -- cyan
+					teal = "#A4DAA7", -- number / enum
+					green = "#B7CC85", -- green
+					yellow = "#FFE066", -- yellow / warnings
+					peach = "#DEBA87", -- operator / orange
+					lavender = "#263356", -- selection bg
 					rosewater = "#E0C15A", -- accent (gold)
 				},
 			},
