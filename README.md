@@ -1,3 +1,5 @@
+<![LazaroBox.nvim](./lazarobox-nvim.png)
+
 # 🟥 LazaroBox.nvim
 
 ```text
@@ -7,6 +9,12 @@
 A cyberpunk-inspired Neovim colorscheme built on top of Catppuccin, designed for clarity, contrast, and long coding sessions.```
 
 > ⚡ For the full experience, pair it with the official WezTerm config.
+
+---
+
+<p align="center">
+    <img src="./lazarobox-home.png" alt="LazaroBox preview"/>
+</p>
 
 ---
 
