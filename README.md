@@ -6,6 +6,8 @@
 
 A cyberpunk-inspired Neovim colorscheme built on top of Catppuccin, designed for clarity, contrast, and long coding sessions.```
 
+> ⚡ For the full experience, pair it with the official WezTerm config.
+
 ---
 
 ## 🧠 Philosophy
@@ -18,21 +20,6 @@ LazaroBox is not just a palette — it's a visual filtering layer for code.
 - Semantic color grouping aligned with LSP scopes
 - Minimal distractions, maximum readability
 - Designed for long sessions in low-light environments
-
----
-
-## 🧠 Concept
-
-LazaroBox is built around a simple idea:
-
-> Reduce noise. Highlight signal.
-
-- Deep dark backgrounds
-- Soft neon accents
-- High contrast where it matters
-- Minimal visual fatigue
-
-Inspired by cyberpunk terminals and modern developer workflows.
 
 ---
 
@@ -54,6 +41,21 @@ Inspired by cyberpunk terminals and modern developer workflows.
 | Gold       | `#E0C15A` |
 | Red        | `#CB7C94` |
 | Orange     | `#DEBA87` |
+
+---
+
+## 🧠 Concept
+
+LazaroBox is built around a simple idea:
+
+> Reduce noise. Highlight signal.
+
+- Deep dark backgrounds
+- Soft neon accents
+- High contrast where it matters
+- Minimal visual fatigue
+
+Inspired by cyberpunk terminals and modern developer workflows.
 
 ---
 
@@ -143,13 +145,37 @@ vim.cmd.colorscheme("catppuccin")
 
 ## 🧩 Ecosystem
 
-Designed to integrate with:
+LazaroBox is designed as part of a cohesive terminal experience.
 
-- Neovim (Treesitter, LSP, CMP, etc.)
-- WezTerm _(WIP)_
-- Transparent compositors (Hyprland, i3, etc.)
+### 🖥️ Neovim
+
+- LazaroBox.nvim (this repository)
+- Optimized for Treesitter, LSP and modern workflows
+
+### 🟧 WezTerm
+
+To fully experience the intended visual environment, use the matching WezTerm configuration:
+
+👉 [https://github.com/pichu2707/lazarobox-wezterm](https://github.com/pichu2707/lazarobox-wezterm)
+
+Includes:
+
+- Matching color palette
+- Transparency tuning
+- Font and rendering optimizations
+- Terminal-level contrast control
 
 ---
+
+## 🔗 Recommended Setup
+
+For best results:
+
+- Neovim → LazaroBox.nvim
+- Terminal → WezTerm config
+- Background → Transparent compositor
+
+## This combination ensures consistent color rendering across the entire stack.
 
 ## 🧬 Design Notes
 
