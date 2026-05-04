@@ -1,4 +1,4 @@
-<![LazaroBox.nvim](./lazarobox-nvim.png)
+![LazaroBox.nvim](./lazarobox-nvim.png)
 
 # 🟥 LazaroBox.nvim
 
